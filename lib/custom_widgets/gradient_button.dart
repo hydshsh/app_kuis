@@ -2,48 +2,42 @@ import 'package:flutter/material.dart';
 
 class GradientButton extends StatelessWidget {
   const GradientButton({
+    required this.color,
     required this.onPressed,
     required this.text,
+    this.textStyle,
+    this.buttonStyle,
     super.key,
   });
 
+  final List<Color> color;
   final VoidCallback onPressed;
   final String text;
+  final TextStyle? textStyle;
+  final ButtonStyle? buttonStyle;
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: ElevatedButton(
-        onPressed: onPressed,
-        style: ElevatedButton.styleFrom(
-          padding: EdgeInsets.zero, // Menghilangkan padding default
-          fixedSize: const Size(200, 50), // Mengatur ukuran tetap (lebar, tinggi)
-          shape: RoundedRectangleBorder(
-            borderRadius:
-                BorderRadius.circular(30), // Mengatur sudut button melengkung
+    return ElevatedButton(
+      onPressed: onPressed,
+      style: ElevatedButton.styleFrom(
+        padding: EdgeInsets.zero,
+      ),
+      child: Ink(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: color,
           ),
+          borderRadius: BorderRadius.circular(30),
         ),
-        child: Ink(
-          decoration: BoxDecoration(
-            gradient: const LinearGradient(
-              colors: [
-                Color.fromARGB(255, 3, 79, 165),
-                Color.fromARGB(255, 2, 145, 189),
-              ],
-            ),
-            borderRadius:
-                BorderRadius.circular(30), // Menyesuaikan sudut gradasi
-          ),
-          child: Container(
-            alignment: Alignment.center,
-            child: const Text(
-              'Mulai Kuis',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 16,
-                letterSpacing: 2,
-              ),
-            ),
+        child: Container(
+          width: double.infinity,
+          height: 40,
+          alignment: Alignment.center,
+          child: Text(
+            text,
+            textAlign: TextAlign.center,
+            style: textStyle,
           ),
         ),
       ),
