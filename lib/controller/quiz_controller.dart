@@ -1,4 +1,3 @@
-import 'package:app_kuis/custom_widgets/gradient_container.dart';
 import 'package:app_kuis/pages/home_screen.dart';
 import 'package:app_kuis/pages/questions_screen.dart';
 import 'package:flutter/material.dart';
@@ -49,11 +48,7 @@ class _QuizControllerState extends State<QuizController> {
 
     return MaterialApp(
       home: Scaffold(
-        body: GradientContainer(
-          color: const [
-            Color(0xFF9733EE),
-            Color(0xFFDA22FF),
-          ],
+        body: Container(
           //todo CARA PERTAMA
           // child: activeScreen,
           //todo CARA KEDUA & KETIGA

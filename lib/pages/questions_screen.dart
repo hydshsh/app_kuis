@@ -12,16 +12,19 @@ class QuestionsScreen extends StatefulWidget {
 }
 
 class _QuestionsScreenState extends State<QuestionsScreen> {
-  void onTap() {
-    //code..
-  }
+  var currentQuestionindex = 0;
+
+  void answerQuestion () {
+      setState(() {
+        currentQuestionindex++;
+      });
+    }
 
   @override
   Widget build(BuildContext context) {
-    final currentQuestion = questions[0];
-
+    final currentQuestion = questions[currentQuestionindex];
+    
     return SizedBox(
-      width: double.infinity,
       child: GradientContainer(
         color: const [
           Color(0xFF76698C),
@@ -29,7 +32,7 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
           Color(0xFF4A7FD6),
         ],
         child: Padding(
-          padding: const EdgeInsets.all(40),
+          padding: const EdgeInsets.symmetric(horizontal: 40),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -38,58 +41,28 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
                 textAlign: TextAlign.center,
                 style: GoogleFonts.fredoka(
                     textStyle: const TextStyle(
-                        color: Color(0xFF3A47A5),
+                        color: Color(0xFF02000C),
                         fontSize: 20,
                         fontWeight: FontWeight.bold)),
               ),
               const SizedBox(
-                height: 20,
+                height: 32,
               ),
-              GradientButton(
-                color: const [
-                  Color(0xFFA58C9C),
-                  Color(0xFFA58C9C),
-                ],
-                onPressed: () {},
-                buttonStyle: ElevatedButton.styleFrom(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(40),
-                  ),
-                ),
-                text: currentQuestion.answer[0],
-                textStyle: const TextStyle(color: Colors.black),
-              ),
-              GradientButton(
-                color: const [
-                  Color(0xFFA58C9C),
-                  Color(0xFFA58C9C),
-                ],
-                onPressed: () {},
-                buttonStyle: ElevatedButton.styleFrom(
-                  // padding: EdgeInsets.zero,
-                  // fixedSize: const Size(200, 50),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(40),
-                  ),
-                ),
-                text: currentQuestion.answer[1],
-                textStyle: const TextStyle(color: Colors.black),
-              ),
-              GradientButton(
-                color: const [
-                  Color(0xFFA58C9C),
-                  Color(0xFFA58C9C),
-                ],
-                onPressed: () {},
-                buttonStyle: ElevatedButton.styleFrom(
-                  // padding: EdgeInsets.zero,
-                  // fixedSize: const Size(200, 50),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(40),
-                  ),
-                ),
-                text: currentQuestion.answer[2],
-                textStyle: const TextStyle(color: Colors.black),
+              ...currentQuestion.getShuffledAnswer().map(
+                (answer) {
+                  return Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 5, 0, 0),
+                    child: GradientButton(
+                      color: const [
+                        Color(0xFF3A47A5),
+                        Color(0xFF3A47A5),
+                      ],
+                      onPressed: answerQuestion,
+                      text: answer,
+                      textStyle: const TextStyle(color: Colors.white,)
+                    ),
+                  );
+                },
               ),
             ],
           ),
