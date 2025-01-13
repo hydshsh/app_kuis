@@ -5,7 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class QuestionsScreen extends StatefulWidget {
-  const QuestionsScreen({super.key});
+  const QuestionsScreen({super.key, required this.onSelectedAnswer});
+
+  final void Function(String answer) onSelectedAnswer;
 
   @override
   State<QuestionsScreen> createState() => _QuestionsScreenState();
@@ -14,16 +16,19 @@ class QuestionsScreen extends StatefulWidget {
 class _QuestionsScreenState extends State<QuestionsScreen> {
   var currentQuestionindex = 0;
 
-  void answerQuestion () {
-      setState(() {
+  void answerQuestion(String selectedAnswer) {
+    widget.onSelectedAnswer(selectedAnswer);
+    setState(
+      () {
         currentQuestionindex++;
-      });
-    }
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     final currentQuestion = questions[currentQuestionindex];
-    
+
     return SizedBox(
       child: GradientContainer(
         color: const [
@@ -53,14 +58,17 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
                   return Padding(
                     padding: const EdgeInsets.fromLTRB(0, 5, 0, 0),
                     child: GradientButton(
-                      color: const [
-                        Color(0xFF3A47A5),
-                        Color(0xFF3A47A5),
-                      ],
-                      onPressed: answerQuestion,
-                      text: answer,
-                      textStyle: const TextStyle(color: Colors.white,)
-                    ),
+                        color: const [
+                          Color(0xFF3A47A5),
+                          Color(0xFF3A47A5),
+                        ],
+                        onPressed: () {
+                          answerQuestion(answer);
+                        },
+                        text: answer,
+                        textStyle: const TextStyle(
+                          color: Colors.white,
+                        )),
                   );
                 },
               ),

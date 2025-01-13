@@ -1,3 +1,4 @@
+import 'package:app_kuis/data/questions.dart';
 import 'package:app_kuis/pages/home_screen.dart';
 import 'package:app_kuis/pages/questions_screen.dart';
 import 'package:flutter/material.dart';
@@ -20,6 +21,7 @@ class _QuizControllerState extends State<QuizController> {
   // }
 
   //todo CARA KEDUA & KETIGA
+  List<String> selectedAnswer = [];
   var activeScreen = '/home-screen';
 
   void switchScreen() {
@@ -31,12 +33,27 @@ class _QuizControllerState extends State<QuizController> {
     });
   }
 
+  void chooseAnswer(String answer) {
+    selectedAnswer.add(answer);
+
+    if (selectedAnswer.length == questions.length) {
+      setState(
+        () {
+          selectedAnswer = [];
+          activeScreen = '/home-screen';
+        },
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     //todo CARA KEDUA
     final screenActive = activeScreen == '/home-screen'
         ? HomeScreen(switchScreen)
-        : QuestionsScreen();
+        : QuestionsScreen(
+            onSelectedAnswer: chooseAnswer,
+          );
 
     //todo CARA KETIGA
     // Widget screenActive = HomeScreen(switchScreen);
