@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:app_kuis/custom_widgets/gradient_button.dart';
 import 'package:app_kuis/custom_widgets/gradient_container.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen(this.startQuiz, {super.key});
@@ -30,17 +31,17 @@ class HomeScreen extends StatelessWidget {
             const SizedBox(
               height: 40,
             ),
-            const Text(
+            Text(
               'Flutter Quiz',
-              style: TextStyle(
+              style: GoogleFonts.fredoka(
                 fontSize: 40,
-                color: Color(0xFF02000C),
+                color: const Color(0xFF02000C),
                 fontWeight: FontWeight.bold,
               ),
             ),
-            const Text(
+            Text(
               'Untuk mereview pembelajaran kemarin',
-              style: TextStyle(
+              style: GoogleFonts.fredoka(
                 fontSize: 16,
               ),
             ),
@@ -63,7 +64,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 text: 'Mulai Kuis',
-                textStyle: const TextStyle(
+                textStyle: GoogleFonts.fredoka(
                   color: Colors.white,
                   fontSize: 16,
                   letterSpacing: sqrt1_2,

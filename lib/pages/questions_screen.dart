@@ -37,7 +37,7 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
           Color(0xFF4A7FD6),
         ],
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 40),
+          padding: const EdgeInsets.all(40),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -45,10 +45,11 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
                 currentQuestion.text,
                 textAlign: TextAlign.center,
                 style: GoogleFonts.fredoka(
-                    textStyle: const TextStyle(
-                        color: Color(0xFF02000C),
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold)),
+                  textStyle: const TextStyle(
+                      color: Color(0xFF02000C),
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold),
+                ),
               ),
               const SizedBox(
                 height: 32,
@@ -58,17 +59,18 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
                   return Padding(
                     padding: const EdgeInsets.fromLTRB(0, 5, 0, 0),
                     child: GradientButton(
-                        color: const [
-                          Color(0xFF3A47A5),
-                          Color(0xFF3A47A5),
-                        ],
-                        onPressed: () {
-                          answerQuestion(answer);
-                        },
-                        text: answer,
-                        textStyle: const TextStyle(
-                          color: Colors.white,
-                        )),
+                      color: const [
+                        Color(0xFF3A47A5),
+                        Color(0xFF3A47A5),
+                      ],
+                      onPressed: () {
+                        answerQuestion(answer);
+                      },
+                      text: answer,
+                      textStyle: GoogleFonts.fredoka(
+                        color: Colors.white,
+                      ),
+                    ),
                   );
                 },
               ),
