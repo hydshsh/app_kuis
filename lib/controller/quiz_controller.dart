@@ -3,6 +3,8 @@ import 'package:app_kuis/pages/home_screen.dart';
 import 'package:app_kuis/pages/questions_screen.dart';
 import 'package:app_kuis/pages/result_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class QuizController extends StatefulWidget {
   const QuizController({super.key});
@@ -72,10 +74,14 @@ class _QuizControllerState extends State<QuizController> {
     final screenActive = activeScreen == '/home-screen'
         ? HomeScreen(switchScreen)
         : activeScreen == '/question-screen'
-          ? QuestionsScreen(
-            onSelectedAnswer: chooseAnswer,
-          )
-          : ResultScreen(choosenAnswer: selectedAnswer, endQuiz: endQuiz, restartQuiz: restartQuiz);
+            ? QuestionsScreen(
+                onSelectedAnswer: chooseAnswer,
+                endQuiz: endQuiz,
+              )
+            : ResultScreen(
+                choosenAnswer: selectedAnswer,
+                endQuiz: endQuiz,
+                restartQuiz: restartQuiz);
 
     //todo CARA KETIGA
     // Widget screenActive = HomeScreen(switchScreen);
@@ -87,12 +93,45 @@ class _QuizControllerState extends State<QuizController> {
 
     return MaterialApp(
       home: Scaffold(
-        body: Container(
-          //todo CARA PERTAMA
-          // child: activeScreen,
-          //todo CARA KEDUA & KETIGA
-          child: screenActive,
-        ),
+        body: Stack(
+            //todo CARA PERTAMA
+            // child: activeScreen,
+            //todo CARA KEDUA & KETIGA
+            children: [
+              screenActive,
+              Container(
+                height: double.infinity,
+                width: double.infinity,
+                margin: const EdgeInsets.fromLTRB(0, 0, 0, 20),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Made by Fadli Ganteng kyk Ji Chang Wook',
+                          textAlign: TextAlign.center,
+                          style: GoogleFonts.fredoka(
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Container(
+                          margin: const EdgeInsets.symmetric(horizontal: 5),
+                          child: const FaIcon(FontAwesomeIcons.gratipay),
+                        ),
+                      ],
+                    ),
+                    Text(
+                      '© 2025 GS 65',
+                      style: GoogleFonts.fredoka(
+                        color: Colors.black,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ]),
       ),
     );
   }
