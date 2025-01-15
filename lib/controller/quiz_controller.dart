@@ -1,10 +1,10 @@
+import 'package:flutter/material.dart';
 import 'package:app_kuis/data/questions.dart';
 import 'package:app_kuis/pages/home_screen.dart';
 import 'package:app_kuis/pages/questions_screen.dart';
 import 'package:app_kuis/pages/result_screen.dart';
-import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class QuizController extends StatefulWidget {
   const QuizController({super.key});
@@ -99,38 +99,38 @@ class _QuizControllerState extends State<QuizController> {
             //todo CARA KEDUA & KETIGA
             children: [
               screenActive,
-              Container(
-                height: double.infinity,
-                width: double.infinity,
-                margin: const EdgeInsets.fromLTRB(0, 0, 0, 20),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          'Made by Fadli Ganteng kyk Ji Chang Wook',
-                          textAlign: TextAlign.center,
-                          style: GoogleFonts.fredoka(
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        Container(
-                          margin: const EdgeInsets.symmetric(horizontal: 5),
-                          child: const FaIcon(FontAwesomeIcons.gratipay),
-                        ),
-                      ],
-                    ),
-                    Text(
-                      '© 2025 GS 65',
-                      style: GoogleFonts.fredoka(
-                        color: Colors.black,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+              // Container(
+              //   height: double.infinity,
+              //   width: double.infinity,
+              //   margin: const EdgeInsets.fromLTRB(0, 0, 0, 20),
+              //   child: Column(
+              //     mainAxisAlignment: MainAxisAlignment.end,
+              //     children: [
+              //       Row(
+              //         mainAxisAlignment: MainAxisAlignment.center,
+              //         children: [
+              //           Text(
+              //             'Made by Fadli Ganteng kyk Ji Chang Wook',
+              //             textAlign: TextAlign.center,
+              //             style: GoogleFonts.fredoka(
+              //               fontWeight: FontWeight.bold,
+              //             ),
+              //           ),
+              //           Container(
+              //             margin: const EdgeInsets.symmetric(horizontal: 5),
+              //             child: const FaIcon(FontAwesomeIcons.gratipay),
+              //           ),
+              //         ],
+              //       ),
+              //       Text(
+              //         '© 2025 GS 65',
+              //         style: GoogleFonts.fredoka(
+              //           color: Colors.black,
+              //         ),
+              //       ),
+              //     ],
+              //   ),
+              // ),
             ]),
       ),
     );

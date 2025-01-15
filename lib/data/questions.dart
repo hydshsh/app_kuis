@@ -13,8 +13,8 @@ const questions = [
   QuizQuestion(
     'Siapa nama karakter utama (protagonis) yang dapat kamu pilih di awal permainan?',
     [
-      'Amber',
       'Lumine atau Aether', //
+      'Amber',
       'Diluc',
       'Zhongli',
     ],
@@ -22,8 +22,8 @@ const questions = [
   QuizQuestion(
     'Elemen apa yang digunakan oleh karakter Amber di Genshin Impact?',
     [
-      'Air (Hydro)',
       'Api (Pyro)', //
+      'Air (Hydro)',
       'Angin (Anemo)',
       'Batu (Geo)',
     ],
@@ -40,8 +40,8 @@ const questions = [
   QuizQuestion(
     'Apa nama sistem gacha yang digunakan untuk mendapatkan karakter dan senjata baru di Genshin Impact?',
     [
-      'Loot Box',
       'Wish', //
+      'Loot Box',
       'Summon',
       'Spin',
     ],
@@ -49,17 +49,17 @@ const questions = [
   QuizQuestion(
     'Apa elemen yang digunakan oleh Barbara, karakter yang juga seorang idol di Mondstadt?',
     [
+      'Air (Hydro)', //
       'Api (Pyro)',
       'Angin (Anemo)',
-      'Air (Hydro)', //
       'Listrik (Electro)',
     ],
   ),
   QuizQuestion(
     'Apa nama mata uang premium yang digunakan untuk membeli Intertwined Fate dan Acquaint Fate di Genshin Impact?',
     [
-      'Mora',
       'Primogems', //
+      'Mora',
       'Sigils',
       'Genesis Crystals',
     ],
@@ -67,9 +67,9 @@ const questions = [
   QuizQuestion(
     'Berapa jumlah elemen yang ada di Genshin Impact?',
     [
+      '7', //
       '5',
       '6',
-      '7', //
       '8',
     ],
   ),

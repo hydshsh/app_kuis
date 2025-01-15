@@ -86,7 +86,7 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
                   TextButton(
                     onPressed: widget.endQuiz,
                     child: Text(
-                      'Batal',
+                      'Batal Kuis',
                       style: GoogleFonts.fredoka(
                         color: Colors.black,
                         decoration: TextDecoration.underline,
