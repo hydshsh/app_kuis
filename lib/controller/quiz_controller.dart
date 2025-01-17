@@ -27,7 +27,7 @@ class _QuizControllerState extends State<QuizController> {
   List<String> selectedAnswer = [];
   var activeScreen = '/home-screen';
 
-  void switchScreen() {
+  void startQuiz() {
     setState(() {
       //todo CARA PERTAMA
       // activeScreen = const QuestionsScreen();
@@ -72,7 +72,7 @@ class _QuizControllerState extends State<QuizController> {
   Widget build(BuildContext context) {
     //todo CARA KEDUA
     final screenActive = activeScreen == '/home-screen'
-        ? HomeScreen(switchScreen)
+        ? HomeScreen(startQuiz)
         : activeScreen == '/question-screen'
             ? QuestionsScreen(
                 onSelectedAnswer: chooseAnswer,
@@ -81,7 +81,7 @@ class _QuizControllerState extends State<QuizController> {
             : ResultScreen(
                 choosenAnswer: selectedAnswer,
                 endQuiz: endQuiz,
-                restartQuiz: restartQuiz);
+                restartQuiz: restartQuiz,);
 
     //todo CARA KETIGA
     // Widget screenActive = HomeScreen(switchScreen);
@@ -99,38 +99,38 @@ class _QuizControllerState extends State<QuizController> {
             //todo CARA KEDUA & KETIGA
             children: [
               screenActive,
-              // Container(
-              //   height: double.infinity,
-              //   width: double.infinity,
-              //   margin: const EdgeInsets.fromLTRB(0, 0, 0, 20),
-              //   child: Column(
-              //     mainAxisAlignment: MainAxisAlignment.end,
-              //     children: [
-              //       Row(
-              //         mainAxisAlignment: MainAxisAlignment.center,
-              //         children: [
-              //           Text(
-              //             'Made by Fadli Ganteng kyk Ji Chang Wook',
-              //             textAlign: TextAlign.center,
-              //             style: GoogleFonts.fredoka(
-              //               fontWeight: FontWeight.bold,
-              //             ),
-              //           ),
-              //           Container(
-              //             margin: const EdgeInsets.symmetric(horizontal: 5),
-              //             child: const FaIcon(FontAwesomeIcons.gratipay),
-              //           ),
-              //         ],
-              //       ),
-              //       Text(
-              //         '© 2025 GS 65',
-              //         style: GoogleFonts.fredoka(
-              //           color: Colors.black,
-              //         ),
-              //       ),
-              //     ],
-              //   ),
-              // ),
+              Container(
+                height: double.infinity,
+                width: double.infinity,
+                margin: const EdgeInsets.fromLTRB(0, 0, 0, 20),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Made by Fadli Ganteng kyk Ji Chang Wook',
+                          textAlign: TextAlign.center,
+                          style: GoogleFonts.fredoka(
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Container(
+                          margin: const EdgeInsets.symmetric(horizontal: 5),
+                          child: const FaIcon(FontAwesomeIcons.gratipay),
+                        ),
+                      ],
+                    ),
+                    Text(
+                      '© 2025 GS 65',
+                      style: GoogleFonts.fredoka(
+                        color: Colors.black,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ]),
       ),
     );

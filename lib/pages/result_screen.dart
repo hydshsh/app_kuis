@@ -1,3 +1,4 @@
+import 'package:app_kuis/models/question_summary/summary_item.dart';
 import 'package:flutter/material.dart';
 import 'package:app_kuis/data/questions.dart';
 import 'package:app_kuis/custom_widgets/gradient_container.dart';
@@ -16,10 +17,10 @@ class ResultScreen extends StatelessWidget {
   final VoidCallback restartQuiz;
 
   List<Map<String, Object>> getDataSummary() {
-    final List<Map<String, Object>> summary = [];
+    final List<Map<String, Object>> summaryData = [];
 
     for (int i = 0; i < choosenAnswer.length; i++) {
-      summary.add({
+      summaryData.add({
         'question_index': i,
         'question': questions[i].text,
         'correct_answer': questions[i].answer[0],
@@ -27,7 +28,7 @@ class ResultScreen extends StatelessWidget {
       });
     }
 
-    return summary;
+    return summaryData;
   }
 
   @override
@@ -57,78 +58,73 @@ class ResultScreen extends StatelessWidget {
                 'Kamu berhasil menjawab $numTotalCorrectAnswer pertanyaan dengan benar dari total $numTotalQuestion pertanyaan!',
                 style: GoogleFonts.fredoka(
                   color: const Color(0xFF02000C),
-                  fontSize: 16,
+                  fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),
                 textAlign: TextAlign.center,
               ),
               SizedBox(
-                height: 480,
+                height: 500,
                 child: SingleChildScrollView(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Column(
-                        children: summary.map((data) {
-                          return Row(
-                            children: [
-                              Container(
-                                margin: EdgeInsets.fromLTRB(0, 0, 16, 0),
-                                child: CircleAvatar(
-                                  backgroundColor: const Color(0xFF4A7FD6),
-                                  
-                                  child: Text(
-                                    ((data['question_index'] as int) + 1)
-                                        .toString(),
-                                    style: GoogleFonts.fredoka(
-                                      color: Colors.black,
-                                      fontSize: 12,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Expanded(
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      data['question'] as String,
-                                      style: GoogleFonts.fredoka(
-                                        color: Colors.black,
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.bold
-                                      ),
-                                    ),
-                                    Text(
-                                      data['correct_answer'] as String,
-                                      style: GoogleFonts.fredoka(
-                                        color: const Color(0xFF4A7FD6),
-                                        fontSize: 12,
-                                      ),
-                                    ),
-                                    Text(
-                                      data['user_answer'] as String,
-                                      style: GoogleFonts.fredoka(
-                                        color: Color(0xFFB77852),
-                                        fontSize: 12,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          );
-                        }).toList(),
-                      ),
-                      const SizedBox(
-                        height: 40,
-                      ),
-                    ],
+                    children: summary.map((data) {
+                      return SummaryItem(data);
+                    }).toList(),
+                    // Column(
+                    //   children: summary.map((data) {
+                    //     return Row(
+                    //       children: [
+                    //         Container(
+                    //           child: Text(
+                    //             ((data['question_index'] as int) + 1)
+                    //                 .toString(),
+                    //             style: GoogleFonts.fredoka(
+                    //               color: Colors.black,
+                    //               fontSize: 12,
+                    //             ),
+                    //           ),
+                    //         ),
+                    //         Expanded(
+                    //           child: Column(
+                    //             crossAxisAlignment: CrossAxisAlignment.start,
+                    //             children: [
+                    //               Text(
+                    //                 data['question'] as String,
+                    //                 style: GoogleFonts.fredoka(
+                    //                     color: Colors.black,
+                    //                     fontSize: 12,
+                    //                     fontWeight: FontWeight.bold),
+                    //               ),
+                    //               Text(
+                    //                 data['correct_answer'] as String,
+                    //                 style: GoogleFonts.fredoka(
+                    //                   color: const Color(0xFF4A7FD6),
+                    //                   fontSize: 12,
+                    //                 ),
+                    //               ),
+                    //               Text(
+                    //                 data['user_answer'] as String,
+                    //                 style: GoogleFonts.fredoka(
+                    //                   color: const Color(0xFFB77852),
+                    //                   fontSize: 12,
+                    //                 ),
+                    //               ),
+                    //             ],
+                    //           ),
+                    //         ),
+                    //       ],
+                    //     );
+                    //   }).toList(),
+                    // ),
                   ),
                 ),
               ),
+              // const SizedBox(
+              //   height: 20,
+              // ),
               Container(
-                margin: const EdgeInsets.fromLTRB(0, 0, 0, 100),
+                margin: const EdgeInsets.fromLTRB(0, 0, 0, 80),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -154,7 +150,9 @@ class ResultScreen extends StatelessWidget {
                             size: 16,
                             color: Colors.black,
                           ),
-                          const SizedBox(width: 5,),
+                          const SizedBox(
+                            width: 5,
+                          ),
                           Text(
                             'Ulangi Kuis',
                             style: GoogleFonts.fredoka(

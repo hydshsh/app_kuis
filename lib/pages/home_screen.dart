@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:app_kuis/custom_widgets/gradient_button.dart';
 import 'package:app_kuis/custom_widgets/gradient_container.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +22,7 @@ class HomeScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(
-              'assets/images/quiz-logo.png',
+              'assets/images/gi-logo.png',
               width: 300,
               color: const Color(0xFF3F292C),
             ),
@@ -32,7 +30,7 @@ class HomeScreen extends StatelessWidget {
               height: 40,
             ),
             Text(
-              'Flutter Quiz',
+              'Quiz Genshin Impact',
               style: GoogleFonts.fredoka(
                 fontSize: 40,
                 color: const Color(0xFF02000C),
@@ -40,9 +38,9 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             Text(
-              'Untuk mereview pembelajaran kemarin',
+              'Buat Shofia kalau emang main Genshin Impact!',
               style: GoogleFonts.fredoka(
-                fontSize: 16,
+                fontSize: 20,
               ),
             ),
             const SizedBox(
@@ -66,8 +64,8 @@ class HomeScreen extends StatelessWidget {
                 text: 'Mulai Kuis',
                 textStyle: GoogleFonts.fredoka(
                   color: Colors.white,
-                  fontSize: 16,
-                  letterSpacing: sqrt1_2,
+                  fontSize: 20,
+                  letterSpacing: 2,
                 ),
               ),
             ),

@@ -51,7 +51,7 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
                   style: GoogleFonts.fredoka(
                     textStyle: const TextStyle(
                         color: Color(0xFF02000C),
-                        fontSize: 20,
+                        fontSize: 24,
                         fontWeight: FontWeight.bold),
                   ),
                 ),
@@ -73,6 +73,7 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
                           text: answer,
                           textStyle: GoogleFonts.fredoka(
                             color: Colors.white,
+                            fontSize: 20,
                           ),
                         ),
                       );
@@ -80,8 +81,11 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
                   ),
                 ],
               ),
+              const SizedBox(
+                height: 20,
+              ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   TextButton(
                     onPressed: widget.endQuiz,
@@ -90,6 +94,7 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
                       style: GoogleFonts.fredoka(
                         color: Colors.black,
                         decoration: TextDecoration.underline,
+                        fontSize: 20,
                       ),
                     ),
                   ),
