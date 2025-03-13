@@ -32,7 +32,6 @@ class GradientButton extends StatelessWidget {
         ),
         child: Container(
           width: double.infinity,
-          height: 40,
           alignment: Alignment.center,
           child: Text(
             text,

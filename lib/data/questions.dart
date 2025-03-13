@@ -2,93 +2,95 @@ import 'package:app_kuis/models/quiz_question.dart';
 
 const questions = [
   QuizQuestion(
-    'Apa nama dunia tempat permainan Genshin Impact berlangsung?',
+    // jawaban yang bener selalu di urutan pertama pilihan ganda
+
+    'Apa itu Flutter?',
     [
-      'Tevyat', //
-      'Mondstadt',
-      'Liyue',
-      'Inazuma',
+      'Framework untuk membuat aplikasi mobile', //
+      'Framework untuk membuat website',
+      'Sistem operasi untuk smartphone',
+      'Bahasa pemrograman',
     ],
   ),
   QuizQuestion(
-    'Siapa nama karakter utama (protagonis) yang dapat kamu pilih di awal permainan?',
+    'Apa bahasa pemrograman yang digunakan Flutter?',
     [
-      'Lumine atau Aether', //
-      'Amber',
-      'Diluc',
-      'Zhongli',
+      'Dart', //
+      'Java',
+      'Kotlin',
+      'Swift',
     ],
   ),
   QuizQuestion(
-    'Elemen apa yang digunakan oleh karakter Amber di Genshin Impact?',
+    'Bagaimana cara memulai aplikasi Flutter baru di Visual Studio Code?',
     [
-      'Api (Pyro)', //
-      'Air (Hydro)',
-      'Angin (Anemo)',
-      'Batu (Geo)',
+      'Menjalankan perintah flutter create', //
+      'Membuat file index.html',
+      'Membuat file main.py',
+      'Menambahkan package baru di pubspec.yaml',
     ],
   ),
   QuizQuestion(
-    'Apa tujuan utama Traveler (karakter utama) dalam cerita Genshin Impact?',
+    'Apa nama file utama yang berisi kode awal aplikasi Flutter?',
     [
-      'Mencari saudara kembarnya yang hilang', //
-      'Menjadi petualang terhebat di Teyvat',
-      'Menyelamatkan dunia dari kehancuran',
-      'Mengalahkan Archon Electro',
+      'main.dart', //
+      'app.dart',
+      'flutter.dart',
+      'lib.dart',
     ],
   ),
   QuizQuestion(
-    'Apa nama sistem gacha yang digunakan untuk mendapatkan karakter dan senjata baru di Genshin Impact?',
+    'Widget mana yang digunakan untuk membuat layout dasar di Flutter?',
     [
-      'Wish', //
-      'Loot Box',
-      'Summon',
-      'Spin',
+      'Scaffold', //
+      'Text',
+      'Image',
+      'Container',
     ],
   ),
   QuizQuestion(
-    'Apa elemen yang digunakan oleh Barbara, karakter yang juga seorang idol di Mondstadt?',
+    'Apa fungsi dari widget Text dalam Flutter?',
     [
-      'Air (Hydro)', //
-      'Api (Pyro)',
-      'Angin (Anemo)',
-      'Listrik (Electro)',
+      'Untuk menampilkan teks', //
+      'Untuk menampilkan gambar',
+      'Untuk membuat layout kolom',
+      'Untuk menangani input pengguna',
     ],
   ),
   QuizQuestion(
-    'Apa nama mata uang premium yang digunakan untuk membeli Intertwined Fate dan Acquaint Fate di Genshin Impact?',
+    'Bagaimana cara menjalankan aplikasi Flutter di emulator atau perangkat?',
     [
-      'Primogems', //
-      'Mora',
-      'Sigils',
-      'Genesis Crystals',
+      'Dengan menjalankan perintah flutter run', //
+      'Dengan menginstall file APK secara manual',
+      'Dengan membuka file aplikasi di browser',
+      'Dengan menulis perintah flutter compile',
     ],
   ),
   QuizQuestion(
-    'Berapa jumlah elemen yang ada di Genshin Impact?',
+    'Apa fungsi dari widget Container dalam Flutter?',
     [
-      '7', //
-      '5',
-      '6',
-      '8',
+      'Untuk mengatur layout dan styling', //
+      'Untuk menampilkan teks',
+      'Untuk menampilkan ikon',
+      'Untuk menangani klik tombol',
     ],
   ),
   QuizQuestion(
-    'Siapa Archon Angin (Anemo) yang memimpin Mondstadt?',
+    'Bagaimana cara menampilkan gambar di Flutter?',
     [
-      'Venti', //
-      'Jean',
-      'Diluc',
-      'Ningguang',
+      'Menggunakan widget Image', //
+      'Menggunakan widget Text',
+      'Menggunakan widget Button',
+      'Menggunakan widget Scaffold',
     ],
   ),
   QuizQuestion(
-    'Apa nama kapal terbang yang digunakan oleh karakter di Genshin Impact untuk melayang di udara?',
+    'Apa yang dilakukan oleh perintah flutter doctor?',
     [
-      'Glider', //
-      'Airship',
-      'Paraglider',
-      'Windcatcher',
+      'Memeriksa dan menunjukkan masalah konfigurasi pada sistem development Flutter', //
+      'Memperbaiki bug di aplikasi',
+      'Menghapus cache aplikasi',
+      'Mengupdate Flutter SDK',
     ],
   ),
 ];

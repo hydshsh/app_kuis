@@ -1,12 +1,14 @@
-import 'package:app_kuis/custom_widgets/gradient_button.dart';
 import 'package:app_kuis/custom_widgets/gradient_container.dart';
 import 'package:app_kuis/data/questions.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class QuestionsScreen extends StatefulWidget {
-  const QuestionsScreen(
-      {super.key, required this.onSelectedAnswer, required this.endQuiz});
+  const QuestionsScreen({
+    super.key,
+    required this.onSelectedAnswer,
+    required this.endQuiz,
+  });
 
   final void Function(String answer) onSelectedAnswer;
   final VoidCallback endQuiz;
@@ -62,18 +64,24 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
                     (answer) {
                       return Padding(
                         padding: const EdgeInsets.fromLTRB(0, 0, 0, 12),
-                        child: GradientButton(
-                          color: const [
-                            Color(0xFF3A47A5),
-                            Color(0xFF3A47A5),
-                          ],
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: const Color(0xFF3A47A5),
+                          ),
                           onPressed: () {
                             answerQuestion(answer);
                           },
-                          text: answer,
-                          textStyle: GoogleFonts.fredoka(
-                            color: Colors.white,
-                            fontSize: 20,
+                          child: Container(
+                            width: double.infinity,
+                            padding: const EdgeInsets.symmetric(vertical: 5),
+                            child: Text(
+                              textAlign: TextAlign.center,
+                              answer,
+                              style: GoogleFonts.fredoka(
+                                color: Colors.white,
+                                fontSize: 20,
+                              ),
+                            ),
                           ),
                         ),
                       );

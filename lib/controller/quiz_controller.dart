@@ -4,7 +4,6 @@ import 'package:app_kuis/pages/home_screen.dart';
 import 'package:app_kuis/pages/questions_screen.dart';
 import 'package:app_kuis/pages/result_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class QuizController extends StatefulWidget {
   const QuizController({super.key});
@@ -110,20 +109,27 @@ class _QuizControllerState extends State<QuizController> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          'Made by Fadli Ganteng kyk Ji Chang Wook',
+                          'Made by hydshsh',
                           textAlign: TextAlign.center,
                           style: GoogleFonts.fredoka(
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        Container(
-                          margin: const EdgeInsets.symmetric(horizontal: 5),
-                          child: const FaIcon(FontAwesomeIcons.gratipay),
-                        ),
+                        // Container(
+                        //   margin: const EdgeInsets.symmetric(horizontal: 5),
+                        //   child: const FaIcon(FontAwesomeIcons.gratipay),
+                        // ),
+                        // Text(
+                        //   ' by fadli',
+                        //   textAlign: TextAlign.center,
+                        //   style: GoogleFonts.fredoka(
+                        //     fontWeight: FontWeight.bold,
+                        //   ),
+                        // ),
                       ],
                     ),
                     Text(
-                      '© 2025 GS 65',
+                      '© 2025 Hydshsh Project',
                       style: GoogleFonts.fredoka(
                         color: Colors.black,
                       ),

@@ -38,7 +38,7 @@ class SummaryItem extends StatelessWidget {
               Text(
                 'Jawaban kamu: ${itemData['user_answer'] as String}',
                 style: GoogleFonts.fredoka(
-                  color: const Color(0xFFB77852),
+                  color: const Color.fromARGB(255, 16, 175, 16),
                   fontSize: 16,
                 ),
               ),
